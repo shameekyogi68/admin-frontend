@@ -7,7 +7,7 @@ const adminApi = {
    */
   async getAll() {
     try {
-      const response = await axiosInstance.get('/admin/admins');
+      const response = await axiosInstance.get('/api/admin/admins');
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
@@ -19,7 +19,7 @@ const adminApi = {
    */
   async create(adminData) {
     try {
-      const response = await axiosInstance.post('/admin/admins', adminData);
+      const response = await axiosInstance.post('/api/admin/admins', adminData);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
@@ -31,7 +31,7 @@ const adminApi = {
    */
   async update(id, adminData) {
     try {
-      const response = await axiosInstance.put(`/admin/admins/${id}`, adminData);
+      const response = await axiosInstance.put(`/api/admin/admins/${id}`, adminData);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
@@ -43,7 +43,7 @@ const adminApi = {
    */
   async delete(id) {
     try {
-      const response = await axiosInstance.delete(`/admin/admins/${id}`);
+      const response = await axiosInstance.delete(`/api/admin/admins/${id}`);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };

@@ -7,7 +7,7 @@ const planApi = {
    */
   async getAll() {
     try {
-      const response = await axiosInstance.get('/plans/all');
+      const response = await axiosInstance.get('/api/plans/all');
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
@@ -19,7 +19,7 @@ const planApi = {
    */
   async getById(id) {
     try {
-      const response = await axiosInstance.get(`/plans/${id}`);
+      const response = await axiosInstance.get(`/api/plans/${id}`);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
@@ -31,7 +31,7 @@ const planApi = {
    */
   async create(planData) {
     try {
-      const response = await axiosInstance.post('/plans/add', planData);
+      const response = await axiosInstance.post('/api/plans/add', planData);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
@@ -43,7 +43,7 @@ const planApi = {
    */
   async update(id, planData) {
     try {
-      const response = await axiosInstance.put(`/plans/update/${id}`, planData);
+      const response = await axiosInstance.put(`/api/plans/update/${id}`, planData);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
@@ -55,7 +55,7 @@ const planApi = {
    */
   async delete(id) {
     try {
-      const response = await axiosInstance.delete(`/plans/delete/${id}`);
+      const response = await axiosInstance.delete(`/api/plans/delete/${id}`);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };

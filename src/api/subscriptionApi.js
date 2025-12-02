@@ -7,7 +7,7 @@ const subscriptionApi = {
    */
   async getByUserId(userId) {
     try {
-      const response = await axiosInstance.get(`/subscriptions/user/${userId}`);
+      const response = await axiosInstance.get(`/api/subscriptions/user/${userId}`);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
@@ -19,7 +19,7 @@ const subscriptionApi = {
    */
   async getAll() {
     try {
-      const response = await axiosInstance.get('/subscriptions/all');
+      const response = await axiosInstance.get('/api/subscriptions/all');
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
@@ -31,7 +31,7 @@ const subscriptionApi = {
    */
   async create(subscriptionData) {
     try {
-      const response = await axiosInstance.post('/subscriptions/add', subscriptionData);
+      const response = await axiosInstance.post('/api/subscriptions/add', subscriptionData);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
@@ -43,7 +43,7 @@ const subscriptionApi = {
    */
   async update(id, subscriptionData) {
     try {
-      const response = await axiosInstance.put(`/subscriptions/update/${id}`, subscriptionData);
+      const response = await axiosInstance.put(`/api/subscriptions/update/${id}`, subscriptionData);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };

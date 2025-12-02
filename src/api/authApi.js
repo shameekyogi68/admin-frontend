@@ -7,7 +7,7 @@ const authApi = {
    */
   async login(email, password) {
     try {
-      const response = await axiosInstance.post('/admin/login', { email, password });
+      const response = await axiosInstance.post('/api/admin/login', { email, password });
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
@@ -19,7 +19,7 @@ const authApi = {
    */
   async register(adminData) {
     try {
-      const response = await axiosInstance.post('/admin/register', adminData);
+      const response = await axiosInstance.post('/api/admin/register', adminData);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };

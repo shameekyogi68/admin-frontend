@@ -12,7 +12,7 @@ const vendorApi = {
       if (filters.status) params.append('status', filters.status);
 
       const queryString = params.toString();
-      const url = queryString ? `/vendors/getall?${queryString}` : '/vendors/getall';
+      const url = queryString ? `/api/vendors/getall?${queryString}` : '/api/vendors/getall';
       
       const response = await axiosInstance.get(url);
       return { success: true, data: response.data };
@@ -26,7 +26,7 @@ const vendorApi = {
    */
   async getById(id) {
     try {
-      const response = await axiosInstance.get(`/vendors/get/${id}`);
+      const response = await axiosInstance.get(`/api/vendors/get/${id}`);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
@@ -38,7 +38,7 @@ const vendorApi = {
    */
   async toggleBlock(id, block) {
     try {
-      const response = await axiosInstance.patch(`/vendors/${id}/block`, { block });
+      const response = await axiosInstance.patch(`/api/vendors/${id}/block`, { block });
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
@@ -50,7 +50,7 @@ const vendorApi = {
    */
   async delete(id) {
     try {
-      const response = await axiosInstance.delete(`/vendors/${id}`);
+      const response = await axiosInstance.delete(`/api/vendors/${id}`);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };

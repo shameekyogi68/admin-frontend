@@ -7,7 +7,7 @@ const bookingApi = {
    */
   async getAll() {
     try {
-      const response = await axiosInstance.get('/bookings/all');
+      const response = await axiosInstance.get('/api/bookings/all');
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
@@ -19,7 +19,7 @@ const bookingApi = {
    */
   async create(bookingData) {
     try {
-      const response = await axiosInstance.post('/bookings/add', bookingData);
+      const response = await axiosInstance.post('/api/bookings/add', bookingData);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };

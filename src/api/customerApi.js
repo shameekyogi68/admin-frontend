@@ -14,7 +14,7 @@ const customerApi = {
       if (filters.page) params.append('page', filters.page);
 
       const queryString = params.toString();
-      const url = queryString ? `/customers/getCustomers?${queryString}` : '/customers/getCustomers';
+      const url = queryString ? `/api/customers/getCustomers?${queryString}` : '/api/customers/getCustomers';
       
       const response = await axiosInstance.get(url);
       
@@ -32,7 +32,7 @@ const customerApi = {
    */
   async getById(id) {
     try {
-      const response = await axiosInstance.get(`/customers/${id}`);
+      const response = await axiosInstance.get(`/api/customers/${id}`);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
@@ -44,7 +44,7 @@ const customerApi = {
    */
   async block(id) {
     try {
-      const response = await axiosInstance.patch(`/customers/${id}/block`);
+      const response = await axiosInstance.patch(`/api/customers/${id}/block`);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
@@ -56,7 +56,7 @@ const customerApi = {
    */
   async unblock(id) {
     try {
-      const response = await axiosInstance.patch(`/customers/${id}/unblock`);
+      const response = await axiosInstance.patch(`/api/customers/${id}/unblock`);
       return { success: true, data: response.data };
     } catch (error) {
       return { success: false, error: error.response?.data?.message || error.message };
