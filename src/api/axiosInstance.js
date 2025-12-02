@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Create axios instance with base configuration
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://admin-backend-2-m3s9.onrender.com',
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://admin-backend-2-m3s9.onrender.com/api',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
