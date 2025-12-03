@@ -179,7 +179,6 @@ const Customers = () => {
                       <th className="p-4 text-left">Name</th>
                       <th className="p-4 text-left">Phone</th>
                       <th className="p-4 text-left">Pack</th>
-                      <th className="p-4 text-left">Price</th>
                       <th className="p-4 text-left">Status</th>
                       <th className="p-4 text-left">Expiry</th>
                       <th className="p-4 text-right">Action</th>
@@ -204,9 +203,6 @@ const Customers = () => {
                             <span className="px-3 py-1 rounded-lg bg-primary/10 text-primary text-xs font-semibold">
                               {customer.currentPack || "-"}
                             </span>
-                          </td>
-                          <td className="p-4 font-semibold text-green-600">
-                            {customer.price ? `₹${customer.price}` : "-"}
                           </td>
                           <td className="p-4">
                             {getStatusBadge(customer.status)}
@@ -237,7 +233,7 @@ const Customers = () => {
 
                     {displayedCustomers.length === 0 && (
                       <tr>
-                        <td colSpan={8} className="p-6 text-center text-muted-foreground">
+                        <td colSpan={7} className="p-6 text-center text-muted-foreground">
                           No customers found
                         </td>
                       </tr>
